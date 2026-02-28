@@ -6,8 +6,7 @@ import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 let marketCache: any = null;
 let lastFetchTime = 0;
-const CACHE_DURATION = 60 * 1000; // 1 minute
-
+const CACHE_DURATION = 60 * 1000; 
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,7 +14,8 @@ const DB_PATH = path.join(__dirname, "data.json");
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT || 4000 ;
+  const apiKey = process.env.GEMINI_API_KEY
 
   app.use(express.json());
 
