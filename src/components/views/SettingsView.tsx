@@ -3,6 +3,7 @@ import { SettingsSection, ToggleSwitch, StyledInput, ActionBtn, PillSelector } f
 import { Wallet, Shield, Zap, Palette, LogOut, ChevronDown } from "lucide-react";
 
 export const SettingsView = () => {
+    // State for interactive UI elements
     const [slippage, setSlippage] = useState("0.5%");
     const [gasPriority, setGasPriority] = useState("Fast");
     const [twoFactor, setTwoFactor] = useState(false);
@@ -16,6 +17,8 @@ export const SettingsView = () => {
                 <h2 className="text-2xl font-bold text-white tracking-tight">Settings</h2>
                 <p className="text-sm text-zinc-500 mt-1">Manage your terminal preferences and account security</p>
             </div>
+
+            {/* Wallet Management Section */}
             <SettingsSection
                 title="Wallet & Network"
                 description="Manage your connected wallet and active network."
@@ -48,6 +51,8 @@ export const SettingsView = () => {
                     </div>
                 </div>
             </SettingsSection>
+
+            {/* Trading Preferences Section */}
             <SettingsSection
                 title="Trading Preferences"
                 description="Configure slippage, gas fees, and network RPC."
@@ -79,6 +84,8 @@ export const SettingsView = () => {
                     </div>
                 </div>
             </SettingsSection>
+
+            {/* Security Section */}
             <SettingsSection
                 title="Security"
                 description="Protect your account with additional security measures."
@@ -107,6 +114,7 @@ export const SettingsView = () => {
                 </div>
             </SettingsSection>
 
+            {/* Appearance & Notifications */}
             <SettingsSection
                 title="Appearance & Notifications"
                 description="Customize the terminal interface."
@@ -135,6 +143,7 @@ export const SettingsView = () => {
                 </div>
             </SettingsSection>
 
+            {/* Save Actions */}
             <div className="flex justify-end gap-4 mt-2 mb-12">
                 <ActionBtn variant="secondary">Restore Defaults</ActionBtn>
                 <ActionBtn variant="primary">Save Changes</ActionBtn>
@@ -142,5 +151,3 @@ export const SettingsView = () => {
         </div>
     );
 };
-
-

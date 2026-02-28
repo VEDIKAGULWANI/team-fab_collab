@@ -1,4 +1,4 @@
-import { LOSE_motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ArrowDownRight, Clock } from "lucide-react";
 
 export interface Transaction {
@@ -39,7 +39,29 @@ export const TransactionTable = ({ transactions }: TransactionTableProps) => {
                                 exit={{ opacity: 0 }}
                                 className="hover:bg-[#151619] transition-colors group cursor-pointer"
                             >
- = "Failed" && (
+                                <td className="px-6 py-4 text-white font-mono text-sm group-hover:text-emerald-400 transition-colors">
+                                    {tx.hash.substring(0, 8)}...{tx.hash.substring(tx.hash.length - 6)}
+                                </td>
+                                <td className="px-6 py-4">
+                                    <span className="px-2.5 py-1 rounded bg-[#1A1B1E] text-zinc-300 text-xs font-medium border border-[#2A2B2E]">
+                                        {tx.method}
+                                    </span>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <div className="flex items-center gap-2 text-sm font-medium">
+                                        {tx.status === "Success" && (
+                                            <div className="flex items-center gap-1.5 text-emerald-400">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                                                Success
+                                            </div>
+                                        )}
+                                        {tx.status === "Pending" && (
+                                            <div className="flex items-center gap-1.5 text-yellow-400">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+                                                Pending
+                                            </div>
+                                        )}
+                                        {tx.status === "Failed" && (
                                             <div className="flex items-center gap-1.5 text-red-400">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                                                 Failed

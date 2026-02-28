@@ -1,27 +1,34 @@
-import { useQueryClient } from "@tanstack/react-query"
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import axios from "axios";
-import { motion } from "framer-motion";
 import {
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from "recharts";
-import Sidebar from "../layout/Sidebar";
-import Header from "../layout/Header";
+  useQuery,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 
-import Card from "../ui/Card";
-import StatCard from "../ui/StatCard";
-import MarketTable from "../ui/MarketTable";
-import WatchlistSidebar from "../ui/WatchlistSidebar";
+import Sidebar from "./Sidebar";
+import type { TabType } from "./Sidebar";
 
-import ActivityView from "../views/ActivityView";
-import TrendingView from "../views/TrendingView";
-import SettingsView from "../views/SettingsView";
+import Header from "./Header";
+import { StatCard } from "../ui/StatCard";
+import { Card } from "../ui/Card";
+import { MarketTable } from "../ui/MarketTable";
+import type {SortConfig } from "../ui/MarketTable";
+import { WatchlistSidebar } from "../ui/WatchlistSidebar";
+import { ActivityView } from "../views/ActivityView";
+import { TrendingView } from "../views/TrendingView";
+import { SettingsView } from "../views/SettingsView";
+
+import {
+  TrendingUp,
+  Activity,
+  ShieldCheck,
+} from "lucide-react";
+
+import { ResponsiveContainer, AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
+import { motion } from "motion/react";
+import type { Coin, WatchlistItem } from "../../types/market";
+
 export default function Dashboard() {
   const queryClient = useQueryClient();
 
@@ -35,6 +42,7 @@ export default function Dashboard() {
     direction: "desc",
   });
 
+  // Fetch Market Data
   const { data: coins = [] } = useQuery({
     queryKey: ["marketData"],
     queryFn: async () => {
@@ -45,12 +53,14 @@ export default function Dashboard() {
     staleTime: 1000 * 60 * 5,
   });
 
+  // Set default selected coin
   useEffect(() => {
     if (coins.length > 0 && !selectedCoinId) {
       setSelectedCoinId(coins[0].id);
     }
   }, [coins, selectedCoinId]);
 
+  // Fetch Watchlist
   const { data: watchlist = [] } = useQuery({
     queryKey: ["watchlist"],
     queryFn: async () => {
