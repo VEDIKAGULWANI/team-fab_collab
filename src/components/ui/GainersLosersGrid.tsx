@@ -38,7 +38,7 @@ const TokenList = ({
         </div>
 
         <div className="space-y-4">
-            {tokens.map((token) => (
+            {tokens.length === 0 ? (<div className="text-gray-500 text-sm" >no Data available</div>) : (tokens.map((token) => (
                 <motion.div
                     key={token.id}
                     initial={{ opacity: 0, y: 10 }}
@@ -77,7 +77,7 @@ const TokenList = ({
                         </div>
                     </div>
                 </motion.div>
-            ))}
+            )))}
         </div>
     </Card>
 );
