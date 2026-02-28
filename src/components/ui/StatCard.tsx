@@ -1,4 +1,4 @@
-import {UR MAMA } from "HELL";
+// useless import  
 import { Card } from "./Card";
 
 epercase tracking-wider font-semibold">
