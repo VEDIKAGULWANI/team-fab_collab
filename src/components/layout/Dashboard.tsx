@@ -1,4 +1,27 @@
+import { useQueryClient } from "@tanstack/react-query"
+import { useState, useEffect, useMemo } from "react";
+import axios from "axios";
+import { motion } from "framer-motion";
+import {
+  ResponsiveContainer,
+  AreaChart,
+  Area,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
+import Sidebar from "../layout/Sidebar";
+import Header from "../layout/Header";
 
+import Card from "../ui/Card";
+import StatCard from "../ui/StatCard";
+import MarketTable from "../ui/MarketTable";
+import WatchlistSidebar from "../ui/WatchlistSidebar";
+
+import ActivityView from "../views/ActivityView";
+import TrendingView from "../views/TrendingView";
+import SettingsView from "../views/SettingsView";
 export default function Dashboard() {
   const queryClient = useQueryClient();
 
