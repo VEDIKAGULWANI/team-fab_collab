@@ -159,3 +159,50 @@ Trending section now displays stable and structured data.
 
 Result:
 Gainers & Losers grid renders correctly even if API response is incomplete.
+---
+### 19th Error: Market Table Header Missing
+- The MarketTable component was rendering rows but table headers were missing.
+- Caused layout inconsistency and unclear data labeling.
+- Fixed by adding proper <thead> structure.
+- Added column titles:
+  - Rank
+  - Coin
+  - Price
+  - 24h Change
+  - Market Cap
+  - Volume
+
+Result:
+Market table now displays structured and readable column headings.
+
+---
+
+### 20th Error: Dot Map Incomplete
+- Dot map / sector heatmap visualization was not rendering fully.
+- Issue caused by incomplete data mapping and missing grid logic.
+- Fixed array mapping logic.
+- Added fallback checks for undefined data.
+- Completed layout structure for full grid rendering.
+
+Result:
+Dot map now renders complete visualization without missing elements.
+---
+### 21st Error: MarketTable and SectorHeatMap Code Mixed
+
+- Half of the MarketTable logic was mistakenly placed inside the SectorHeatMap component.
+- Similarly, part of the SectorHeatMap rendering logic existed inside MarketTable.
+- This caused:
+  - Layout breaking
+  - Incorrect data rendering
+  - Component responsibility confusion
+  - Unexpected UI behavior
+
+Fix:
+- Separated both components clearly.
+- Moved market table logic back to `MarketTable.tsx`.
+- Restored sector visualization logic inside `SectorHeatMap.tsx`.
+- Cleaned imports and ensured each component handles its own data and layout.
+
+Result:
+Both components now render independently with correct structure and clear separation of concerns.
+---
