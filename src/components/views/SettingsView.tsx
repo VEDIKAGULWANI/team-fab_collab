@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-importd, Zap, Palette, LogOut, ChevronDown } from "lucide-react";
+import { Zap, Palette, LogOut, ChevronDown, Filter } from "lucide-react";
+import { SectorHeatmap, Sector } from "../ui/SectorHeatmap";
+import { TrendingTable, TrendingToken } from "../ui/TrendingTable";
+import { Card } from "../ui/Card";
+import { Filter } from "lucide-react";
 
 e
                         </div>
@@ -82,10 +86,7 @@ e
                 </div>
             </SettingsSection>
 
-import { SectorHeatmap, Sector } from "../ui/SectorHeatmap";
-import { TrendingTable, TrendingToken } from "../ui/TrendingTable";
-import { Card } from "../ui/Card";
-import { Filter } from "lucide-react";
+
             <SettingsSection
                 title="Appearance & Notifications"
                 description="Customize the terminal interface."
