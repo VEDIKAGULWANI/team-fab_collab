@@ -35,7 +35,6 @@ export default function Dashboard() {
     direction: "desc",
   });
 
-  // Fetch Market Data
   const { data: coins = [] } = useQuery({
     queryKey: ["marketData"],
     queryFn: async () => {
@@ -46,14 +45,12 @@ export default function Dashboard() {
     staleTime: 1000 * 60 * 5,
   });
 
-  // Set default selected coin
   useEffect(() => {
     if (coins.length > 0 && !selectedCoinId) {
       setSelectedCoinId(coins[0].id);
     }
   }, [coins, selectedCoinId]);
 
-  // Fetch Watchlist
   const { data: watchlist = [] } = useQuery({
     queryKey: ["watchlist"],
     queryFn: async () => {

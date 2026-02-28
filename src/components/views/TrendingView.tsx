@@ -10,9 +10,6 @@ import {
 import { Card } from "../ui/Card";
 import { Wallet } from "lucide-react";
 
-/* =========================
-   SETTINGS VIEW
-========================= */
 
 export const SettingsView = () => {
   const [slippage, setSlippage] = useState("0.5%");
@@ -32,8 +29,6 @@ export const SettingsView = () => {
           Manage your terminal preferences and account security
         </p>
       </div>
-
-      {/* Wallet Section */}
       <SettingsSection
         title="Wallet & Network"
         description="Manage your connected wallet and active network."
@@ -62,9 +57,6 @@ export const SettingsView = () => {
   );
 };
 
-/* =========================
-   TRENDING VIEW
-========================= */
 
 type TrendingToken = {
   id: string;
@@ -159,7 +151,6 @@ export const TrendingView = () => {
 
   return (
     <div className="p-8 max-w-7xl mx-auto flex flex-col gap-8">
-      {/* Top Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <GainersLosersGrid
           gainers={[]}   // Replace with your MOCK_GAINERS
@@ -167,9 +158,7 @@ export const TrendingView = () => {
         />
       </div>
 
-      {/* Trending Table */}
       <Card>
-        {/* Replace with your actual TrendingTable component */}
         <div className="p-6 text-white">
           Sorted by: {sortField}
           <div className="mt-4 space-y-2">
