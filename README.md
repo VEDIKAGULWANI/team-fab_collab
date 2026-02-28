@@ -67,33 +67,23 @@ npm run preview
 ---
 
 ## Project Structure
-
-```
-web-3-fixed/
-├── server.ts                  # Express server + Vite middleware
-├── data.json                  # Persistent watchlist store (no DB needed)
-├── URMAMA.ts                  # Vite config
-├── src/
-│   ├── main.tsx               # React entry point
-│   ├── App.tsx                # Root component with QueryClientProvider
-│   ├── index.css              # Global styles + Tailwind
-│   ├── types/
-│   │   └── market.ts          # Coin and WatchlistItem interfaces
-│   ├── hooks/
-│   │   ├── useMarketData.ts   # React Query hook for market data
-│   │   └── useWatchlist.ts    # React Query hooks for watchlist CRUD
-│   └── components/
-│       ├── layout/
-│       │   ├── Dashboard.tsx  # Main layout, tab routing
-│       │   ├── Header.tsx     # Search bar + wallet connect button
-│       │   └── Sidebar.tsx    # Left icon navigation
-│       ├── ui/                # Reusable UI components
-│       └── views/
-│           ├── ActivityView.tsx
-│           ├── TrendingView.tsx
-│           └── SettingsView.tsx
-```
-
+web-3-main/
+│
+├── server.ts              → Backend server
+├── package.json           → Project dependencies
+├── vite.config.ts         → Vite configuration
+├── tsconfig.json          → TypeScript configuration
+├── index.html             → Main HTML entry
+│
+└── src/
+    ├── main.tsx           → React entry point
+    ├── App.tsx            → Root component
+    ├── components/
+    │   ├── layout/
+    │   ├── ui/
+    │   └── views/
+    ├── hooks/
+    └── types/
 ---
 
 ## API Routes
