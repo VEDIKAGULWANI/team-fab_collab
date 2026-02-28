@@ -186,7 +186,7 @@ Market table now displays structured and readable column headings.
 
 Result:
 Dot map now renders complete visualization without missing elements.
----
+------
 ### 21st Error: MarketTable and SectorHeatMap Code Mixed
 
 - Half of the MarketTable logic was mistakenly placed inside the SectorHeatMap component.
