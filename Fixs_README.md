@@ -206,6 +206,193 @@ Fix:
 Result:
 Both components now render independently with correct structure and clear separation of concerns.
 ---
+
+A. Layout Components (components/layout/)
+1️⃣ Dashboard.tsx
+
+Main dashboard container.
+
+2️⃣ Header.tsx
+
+Top navigation bar:
+
+Logo
+
+User controls
+
+Possibly theme toggle
+
+3️⃣ Sidebar.tsx
+
+Left navigation:
+
+Trending
+
+Activity
+
+Settings
+
+Watchlist
+
+👉 These components control structure of UI.
+
+🟢 B. UI Components (components/ui/)
+
+These are reusable blocks.
+
+🔹 Card.tsx
+
+Generic wrapper component for UI cards.
+
+🔹 StatCard.tsx
+
+Displays:
+
+Market cap
+
+Volume
+
+% change
+
+🔹 MarketTable.tsx
+
+Displays crypto market data in table format.
+
+🔹 TrendingTable.tsx
+
+Shows trending tokens.
+
+🔹 TransactionTable.tsx
+
+Shows transaction history.
+
+🔹 SectorHeatmap.tsx
+
+Displays sector-based performance visualization.
+
+🔹 GainersLosersGrid.tsx
+
+Displays:
+
+Top gainers
+
+Top losers
+
+🔹 LiveFeedSidebar.tsx
+
+Real-time updates panel.
+
+🔹 WatchlistSidebar.tsx
+
+User-selected coins list.
+
+🟢 C. View Components (components/views/)
+
+These act like pages.
+
+🔹 TrendingView.tsx
+
+Displays trending section.
+
+🔹 ActivityView.tsx
+
+Shows user transaction history.
+
+🔹 SettingsView.tsx
+
+Allows:
+
+Theme change
+
+Preferences
+
+Custom settings
+
+🔷 6. Custom Hooks (Advanced Concept)
+
+Located in:
+
+src/hooks/
+
+This is a very professional approach.
+
+🔹 useMarketData.ts
+
+This hook:
+
+Fetches market data
+
+Manages loading state
+
+Handles API calls
+
+Updates UI automatically
+
+This follows React Hooks Lifecycle Pattern.
+
+Concept used:
+
+useState
+
+useEffect
+
+Possibly polling for live updates
+
+🔹 useWatchlist.ts
+
+This hook:
+
+Stores user-selected coins
+
+Adds/removes items
+
+Maintains persistent state
+
+This follows State Encapsulation Principle.
+
+🔷 7. Type Safety (types/market.ts)
+
+You defined TypeScript interfaces.
+
+Example:
+
+interface MarketData {
+   name: string
+   price: number
+   change: number
+}
+
+This ensures:
+
+Compile-time error detection
+
+Strong typing
+
+Clean data flow
+
+No runtime type mismatch
+
+This is enterprise-level coding practice.
+
+🔷 8. Data Flow Architecture
+
+Your system follows:
+
+Backend API
+     ↓
+Custom Hook (useMarketData)
+     ↓
+View Component
+     ↓
+UI Components
+
+This follows:
+
+Unidirectional Data Flow
+
+Component-Based Architecture
+
+Separation of Concerns Principle
 Summary: 
 
 Refactored README for improved clarity and professionalism.
