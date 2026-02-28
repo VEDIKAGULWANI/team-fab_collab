@@ -18,7 +18,6 @@ Features
 
 ## Tech Stack
 
-## 🧱 Tech Stack
 
 | Layer        | Technology                                      |
 |--------------|-------------------------------------------------|
@@ -29,8 +28,7 @@ Features
 | Icons        | Lucide React                                    |
 | Backend      | Express + Vite middleware                       |
 | Runtime      | Node.js 18+, TSX                                |
----
-
+```
 ## Getting Started
 
 ### Prerequisites
@@ -68,24 +66,27 @@ npm run preview
 ---
 
 ## Project Structure
+
+```
 web-3-main/
 │
-├── server.ts              → Backend server
-├── package.json           → Project dependencies
-├── vite.config.ts         → Vite configuration
-├── tsconfig.json          → TypeScript configuration
-├── index.html             → Main HTML entry
+├── server.ts              # Backend server
+├── package.json           # Project dependencies
+├── vite.config.ts         # Vite configuration
+├── tsconfig.json          # TypeScript configuration
+├── index.html             # Main HTML entry
 │
 └── src/
-    ├── main.tsx           → React entry point
-    ├── App.tsx            → Root component
+    ├── main.tsx           # React entry point
+    ├── App.tsx            # Root component
+    │
     ├── components/
-    │   ├── layout/
-    │   ├── ui/
-    │   └── views/
+    ├── layout/
+    ├── ui/
+    ├── views/
     ├── hooks/
     └── types/
----
+```
 
 ## API Routes
 
