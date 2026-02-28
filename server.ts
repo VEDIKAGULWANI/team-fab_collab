@@ -6,7 +6,8 @@ import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 let marketCache: any = null;
 let lastFetchTime = 0;
-const CACHE_DURATION = 60 * 1000; 
+const CACHE_DURATION = 60 * 1000;
+
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -14,14 +15,10 @@ const DB_PATH = path.join(__dirname, "data.json");
 
 async function startServer() {
   const app = express();
-  const PORT = process.env.PORT || 4000 ;
-  const apiKey = process.env.GEMINI_API_KEY
+  const PORT = 3000;
 
   app.use(express.json());
 
-  // --------------------------
-  // DATABASE HELPERS
-  // --------------------------
 
   const readDB = async () => {
     try {
@@ -35,10 +32,6 @@ async function startServer() {
   const writeDB = async (data: any) => {
     await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2));
   };
-
-  // --------------------------
-  // MARKET PROXY (FIXES CORS)
-  // --------------------------
 
   app.get("/api/market", async (req, res) => {
     const now =  Date.now();
@@ -114,7 +107,7 @@ async function startServer() {
       appType: "spa",
     });
 
-    app.use(vite.middlewores);
+    app.use(vite.middlewares);
   } else {
     app.use(express.static(path.join(__dirname, "dist")));
     app.get("*", (req, res) => {
