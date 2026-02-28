@@ -5,7 +5,7 @@
 - Installed `express` and created `server.js`.
 - Purpose: Handle backend APIs for watchlist and market data usage.
 
----
+----
 
 ### 2nd Error: Frontend and Backend Not Connecting
 - CORS was missing.
