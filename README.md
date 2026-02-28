@@ -18,16 +18,17 @@ Features
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 18, TypeScript, Tailwind CSS v4 |
-| State / Data | TanStack React Query, Axios |
-| Animations | Framer Motion |
-| Charts | Recharts |
-| Icons | Lucide React |
-| Backend | Express + Vite middleware |
-| Runtime | Node.js 18+, TSX |
+## 🧱 Tech Stack
 
+| Layer        | Technology                                      |
+|--------------|-------------------------------------------------|
+| Frontend     | React 18, TypeScript, Tailwind CSS v4           |
+| State / Data | TanStack React Query, Axios                     |
+| Animations   | Framer Motion                                   |
+| Charts       | Recharts                                        |
+| Icons        | Lucide React                                    |
+| Backend      | Express + Vite middleware                       |
+| Runtime      | Node.js 18+, TSX                                |
 ---
 
 ## Getting Started
